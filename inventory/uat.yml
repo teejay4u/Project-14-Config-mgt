@@ -4,5 +4,5 @@
 
 [webservers]
 172.31.85.138 ansible_ssh_user='ec2-user' 
-
 172.31.81.81 ansible_ssh_user='ec2-user' 
+172.31.94.243 ansible_ssh_user='ec2-user'
