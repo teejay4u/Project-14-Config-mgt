@@ -1,45 +1,7 @@
- pipeline {
+pipeline {
     agent any
 
-  stages {
-    stage('Build') {
-      steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
-      }
+    parameters {
+      string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
     }
-
-    stage('Package') {
-        steps {
-          script {
-            sh 'echo "Packing stage"'
-          }
-        }
-    }
-
-    stage('Deploy') {
-      steps {
-        script {
-          sh 'echo "Deployment"'
-        }
-      }
-    }
-
-    stage('cleanup') {
-      steps {
-        script {
-          sh 'echo "clean up"'
-        }
-      }
-    }
-
-    stage('Test') {
-      steps {
-        script {
-          sh 'echo "Testing Stage"'
-        }
-      }
-    }
-    }
-}
+...
