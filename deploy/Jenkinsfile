@@ -3,15 +3,14 @@ Jenkins file data
 pipeline {
     agent any
 
-    parameters {
-        string (name: 'env', defaultValue: 'dev.yml',  description: 'This is the inventory file for the environment to deploy configuration')
-        }
-
     environment {
         ANSIBLE_CONFIG="${WORKSPACE}/deploy/.ansible.cfg"
-            }
+       }
 
-    
+     parameters {
+      string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
+    }
+ 
 
     stages {
         stage("Initial cleanup") {
