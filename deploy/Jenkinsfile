@@ -9,12 +9,32 @@ pipeline {
         }
       }
     }
-
+    stage('package') {
+      steps {
+        script {
+          sh 'echo "This is the package stage"'
+        }
+      }
+    }
+    stage('Deploy') {
+      steps {
+        script {
+          sh 'echo "Deployment stage"'
+        }
+      }
+    }
+    stage('cleanup') {
+      steps {
+        script {
+          sh 'echo "clean-up stage ni"'
+        }
+      }
+    }
     stage('Test') {
       steps {
         script {
           sh 'echo "Testing Stage"'
-        }
+                  }
       }
     }
     }
